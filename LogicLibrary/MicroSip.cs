@@ -8,6 +8,6 @@ namespace LogicLibrary
 {
     public class MicroSip
     {
-
+         
     }
 }
