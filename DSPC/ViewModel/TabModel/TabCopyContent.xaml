@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="DSPC.ViewModel.TabModel.TabCopyContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.TabModel"
+             mc:Ignorable="d">
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
+
+            
+
+        <Grid>
+            <StackPanel Visibility="Collapsed">
+                <RadioButton Content="NAPS2"/>
+                <RadioButton Content="Kyocera"/>
+                <RadioButton Content="Mozilla Thunderbird"/>
+                <RadioButton Content="LiveWebCam"/>
+                <RadioButton Content="MicroSip"/>
+                <RadioButton Content="iSpy"/>
+                <RadioButton Content="Google Chrome"/>
+            </StackPanel>
+        </Grid>
+
+
+        <ScrollViewer Grid.Column="1" Visibility="Collapsed">
+            <StackPanel >
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Обновить Users директории" Click="ButtonRefreshFoldersList_Click"/>
+                    <Button Content="Проверить выбранные" Click="ButtonVerifyCheckedFolders_Click"/>
+                </StackPanel>
+                <TextBlock Text="Скопировать данные из текущего пользователя в:"/>
+                <ListBox Name="checkedListBox" 
+                                     ItemsSource="{Binding UsersDictionaries}" IsTabStop="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox       
+                            Content="{Binding Name}"
+                            IsChecked="{Binding IsChecked}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
+
+
+        <ScrollViewer>
+            <StackPanel>
+                <TextBlock Text="Данные копируются из пользователя DSAdmin!!!"/>
+                <ListBox ItemsSource="{Binding ProgramsList}" IsTabStop="False">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <CheckBox       
+                            Content="{Binding Name}"
+                            IsChecked="{Binding IsChecked}" />
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ListBox>
+                <Button Click="ButtonCopyData_Click">
+                    Скопировать
+                </Button>
+            </StackPanel>
+        </ScrollViewer>
+        
+        
+
+    </Grid>
+    
+</UserControl>

@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSPC", "DSPC\DSPC.csproj", "{07A57EFB-1679-4B59-AEF7-CDD4044FA378}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicLibrary", "LogicLibrary\LogicLibrary.csproj", "{2F5D64B0-A639-4C87-B3FD-29DFAE91637C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "appbar", "appbar\appbar.csproj", "{23E8890C-2337-4AF8-90A3-AC3F7AA6051A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{07A57EFB-1679-4B59-AEF7-CDD4044FA378}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07A57EFB-1679-4B59-AEF7-CDD4044FA378}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07A57EFB-1679-4B59-AEF7-CDD4044FA378}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07A57EFB-1679-4B59-AEF7-CDD4044FA378}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F5D64B0-A639-4C87-B3FD-29DFAE91637C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F5D64B0-A639-4C87-B3FD-29DFAE91637C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F5D64B0-A639-4C87-B3FD-29DFAE91637C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F5D64B0-A639-4C87-B3FD-29DFAE91637C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23E8890C-2337-4AF8-90A3-AC3F7AA6051A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23E8890C-2337-4AF8-90A3-AC3F7AA6051A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23E8890C-2337-4AF8-90A3-AC3F7AA6051A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23E8890C-2337-4AF8-90A3-AC3F7AA6051A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

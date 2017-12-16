@@ -1,0 +1,88 @@
+﻿<TreeViewItem
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
+             xmlns:Converters="clr-namespace:DSPC.Converters" xmlns:DSPC="clr-namespace:DSPC" x:Class="DSPC.ViewModel.ViewModelContent.PrinterSettingsContent"
+             mc:Ignorable="d" 
+              >
+    <TreeViewItem.Resources>
+        <Converters:BoolToVisibleOrHidden x:Key="BoolToVisibleOrHidden"/>
+    </TreeViewItem.Resources>
+    
+    <TreeViewItem.Header>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Content="Настройка принтера"/>
+            <Button Click="buttonPrinterSetting" Content="Браузер"/>
+            <Button Click="ButtonOpenFolder_Click" Content="Папка"/>
+            <Button Click="ButtonSetupPrinterDriver_Click" Content="Установить" />
+        </StackPanel>
+    </TreeViewItem.Header>
+
+    <ListBox x:Name="curListBox">
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="buttonPrinterSetting" Content="Открыть"/>
+                <TextBlock Text="Открыть принтер в браузере"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonOpenFolder_Click" Content="Открыть"/>
+                <TextBlock Text="Открыть в проводнике папку с драйверами"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonSetDefaultPrinter_Click" Content="Установить"/>
+                <TextBlock Text="Установить выбранный принтер по умолчанию"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <ComboBox x:Name="comboBoxPrinters" Width="120" 
+                                      ItemsSource="{Binding PrinterStringCollection}"/>
+                <StackPanel Orientation="Horizontal">
+                    <Button Content="Обновить" Click="ButtonRefreshPrinters_Click"/>
+                    <TextBlock Text="Обновить список принтеров"/>
+                </StackPanel>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItem_Selected" Visibility="{Binding VisibleTest, Converter={StaticResource BoolToVisibleOrHidden}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DSPC:MainWindow}}}">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <TextBlock Text="OID:"/>
+                <TextBox x:Name="tbOID" Text="1.3.6.1.2.1.25.3.2.1.3.1" Width="200"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItem_Selected" Visibility="{Binding VisibleTest, Converter={StaticResource BoolToVisibleOrHidden}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DSPC:MainWindow}}}">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <TextBlock Text="IP:"/>
+                <TextBox x:Name="tbIPPrinter"  Width="200"/>
+            </StackPanel>
+        </ListBoxItem>
+
+
+        <ListBoxItem Selected="ListBoxItem_Selected" Visibility="{Binding VisibleTest, Converter={StaticResource BoolToVisibleOrHidden}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DSPC:MainWindow}}}">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonVerifySNMPOID_Click" Content="Проверить"/>
+                <TextBlock x:Name="tbVerSNMPOID"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItem_Selected" Visibility="{Binding VisibleTest, Converter={StaticResource BoolToVisibleOrHidden}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DSPC:MainWindow}}}">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonVerifySNMPOIDAllRetail_Click" Content="Проверить всю розницу"/>
+            </StackPanel>
+        </ListBoxItem>
+
+
+
+    </ListBox>
+
+</TreeViewItem>

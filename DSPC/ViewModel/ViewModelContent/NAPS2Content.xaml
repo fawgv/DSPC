@@ -1,0 +1,34 @@
+﻿<TreeViewItem x:Class="DSPC.ViewModel.ViewModelContent.NAPS2Content"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
+             mc:Ignorable="d" >
+    <TreeViewItem.Header>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Content="Настройка NAPS2"/>
+            <Button Click="Button_Click">Запустить</Button>
+            <Button Click="ButtonKillNaps2_Click" Content="Завершить"/>
+        </StackPanel>
+    </TreeViewItem.Header>
+    
+    <ListBox Name="curListBox">
+       
+
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="Button_Click">Запустить</Button>
+                <TextBlock Text="Настроить NAPS2"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonKillNaps2_Click" Content="Завершить"/>
+                <TextBlock Text="Завершить процесс NAPS2"/>
+            </StackPanel>
+        </ListBoxItem>
+
+    </ListBox>
+</TreeViewItem>

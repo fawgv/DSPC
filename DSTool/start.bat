@@ -1,0 +1,1 @@
+runas /user:dsadmin %~dp0\DSPC.exe

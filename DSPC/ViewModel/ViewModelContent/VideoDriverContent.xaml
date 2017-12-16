@@ -1,0 +1,49 @@
+﻿<TreeViewItem x:Class="DSPC.ViewModel.ViewModelContent.VideoDriverContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
+              xmlns:Commands="clr-namespace:DSPC.Commands"
+             mc:Ignorable="d">
+    <TreeViewItem.Header>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Content="Проверить драйвер видео"/>
+            <Button Content="devmgmt.msc" Command="Commands:CommandsRibbon.DevMen" /> <!--Click="ButtonDevMgmt_Click"-->
+            <Button Content="Start" Click="ButtonStartServ_Click"/>
+            <Button Content="Stop" Click="ButtonStopServ_Click"/>
+        </StackPanel>
+    </TreeViewItem.Header>
+    
+    <ListBox Name="curListBox">
+
+        <ListBoxItem>
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Content="devmgmt.msc" Click="ButtonDevMgmt_Click"/>
+                <TextBlock Text="Открыть диспетчер устройств"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem>
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Content="Start" Click="ButtonStartServ_Click"/>
+                <TextBlock Text="Запустить службу центра обновления Windows"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem>
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Content="Stop" Click="ButtonStopServ_Click"/>
+                <TextBlock Text="Остановить службу центра обновления Windows"/>
+            </StackPanel>
+        </ListBoxItem>
+        
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <CheckBox/>
+                <TextBlock Text="Проверить видео-драйвер"/>
+            </StackPanel>
+        </ListBoxItem>
+        
+    </ListBox>
+</TreeViewItem>

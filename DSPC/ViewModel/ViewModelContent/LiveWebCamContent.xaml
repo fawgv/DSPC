@@ -1,0 +1,30 @@
+﻿<TreeViewItem x:Class="DSPC.ViewModel.ViewModelContent.LiveWebCamContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
+             mc:Ignorable="d">
+    <TreeViewItem.Header>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Content="LiveWebCam"/>
+            <Button Click="ButtonRunLiveWebCam_Click">
+                Открыть
+            </Button>
+        </StackPanel>
+    </TreeViewItem.Header>
+    <ListBox Name="curListBox">
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <CheckBox/>
+                <Button Click="ButtonRunLiveWebCam_Click">
+                    Открыть
+                </Button>
+                <TextBlock Text="Проверить работу LiveWebCam"/>
+
+            </StackPanel>
+        </ListBoxItem>
+        
+
+    </ListBox>
+</TreeViewItem>

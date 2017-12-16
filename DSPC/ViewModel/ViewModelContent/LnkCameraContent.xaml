@@ -1,0 +1,24 @@
+﻿<TreeViewItem x:Class="DSPC.ViewModel.ViewModelContent.LnkCameraContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:viewmodel="clr-namespace:DSPC.ViewModel"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
+             mc:Ignorable="d" 
+                             >
+
+    <TreeViewItem.Header>
+        <CheckBox Content="Ярлык Камера"/>
+    </TreeViewItem.Header>
+    <ListBox Name="curListBox">
+            <ListBoxItem Selected="ListBoxItem_Selected">
+                <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                    <CheckBox/>
+                    <!--<Button Click="Button_Click">Запустить</Button>-->
+                    <TextBlock Text="Настроить ярлык камеры"/>
+                </StackPanel>
+            </ListBoxItem>
+        </ListBox>
+    
+</TreeViewItem>

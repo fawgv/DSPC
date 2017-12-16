@@ -1,0 +1,29 @@
+﻿<TreeViewItem x:Class="DSPC.ViewModel.ViewModelContent.DocumentsContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
+             mc:Ignorable="d" >
+    <TreeViewItem.Header>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox>Сохранение документов</CheckBox>
+            <Button Click="ButtonOpenFlash_Click">Открыть флешку</Button>
+            <Button Click="ButtonOpenС_Click">Открыть c:\UserData\Documents</Button>
+        </StackPanel>
+            
+    </TreeViewItem.Header>
+    
+    <ListBox Name="curListBox">
+        
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonOpenFlash_Click">Открыть флешку</Button>
+                <Button Click="ButtonOpenС_Click">Открыть c:\UserData\Documents</Button>
+            </StackPanel>
+        </ListBoxItem>
+
+        <CheckBox Click="ListBoxItem_Selected">Перенести документы на ПК</CheckBox>
+        
+    </ListBox>
+</TreeViewItem>

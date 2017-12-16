@@ -1,0 +1,53 @@
+﻿<TreeViewItem x:Class="DSPC.ViewModel.ViewModelContent.ThunderbirdContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
+             mc:Ignorable="d">
+
+
+    <TreeViewItem.Header>
+        <StackPanel Orientation="Horizontal">
+            <CheckBox Content="Почта"/>
+            <Button Click="ButtonStartThunderbird_Click" Content="Запустить"/>
+        </StackPanel>
+    </TreeViewItem.Header>
+    <ListBox Name="curListBox">
+        <ListBoxItem Selected="ListBoxItem_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonStartThunderbird_Click" Content="Запустить"/>
+                <TextBlock Text="Запустить Thunderbird"/>
+            </StackPanel>
+        </ListBoxItem>
+        
+        <ListBoxItem Selected="ListBoxItemAddress_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <CheckBox/>
+                <TextBlock Text="Адресная книга"/>
+            </StackPanel>
+        </ListBoxItem>
+        
+        <ListBoxItem Selected="ListBoxItemServ_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <CheckBox/>
+                <TextBlock Text="Вх/исх. серверы"/>
+            </StackPanel>
+        </ListBoxItem>
+        
+        <ListBoxItem Selected="ListBoxItemSign_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <CheckBox/>
+                <TextBlock Text="Подпись"/>
+            </StackPanel>
+        </ListBoxItem>
+
+        <ListBoxItem Selected="ListBoxItemTestMessage_Selected">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <CheckBox/>
+                <TextBlock Text="Тестовое письмо"/>
+            </StackPanel>
+        </ListBoxItem>
+        
+    </ListBox>
+</TreeViewItem>

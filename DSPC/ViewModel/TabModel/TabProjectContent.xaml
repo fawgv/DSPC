@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="DSPC.ViewModel.TabModel.TabProjectContent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.TabModel"
+             mc:Ignorable="d" 
+             Name="tabProjectContent"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="IP:" />
+                <TextBox Name="tbIP" Width="200"/>
+            </StackPanel>
+            <Button Content="Просмотреть каталоги пользователей" 
+                    Click="ButtonPrintFoldersUsers_Click"/>
+            <Button Content="Выполнить проверку наличия файла"
+                    Click="ButtonVerifyFileExist_Click"/>
+            <Button Content="Просмотреть содержимое файла настроек"
+                    Click="ButtonDisplayFile_Click"/>
+            <Button Content="Создать резервную копию файла настроек"
+                    Click="ButtonCreateBackUpFileSettings_Click"/>
+            <Button Content="Заменить кодеки в файле настроек"
+                    Click="ButtonReplaseCodecsInFileSettings_Click"/>
+            <Button Content="Заменить действующий файл настроек на новый"
+                    Click="ButtonReplaceSettingsFileOnNew_Click"/>
+            <Button Content="Комплексная настройка"
+                    Click="ButtonComplexSetting_Click"/>
+            <Button Content="Комплексная настройка диапазона ЦВЗ"
+                    Click="ButtonComplexSettingDiapasone_Click"/>
+
+        </StackPanel>
+            
+    </Grid>
+</UserControl>
