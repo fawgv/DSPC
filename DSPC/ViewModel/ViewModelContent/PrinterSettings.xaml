@@ -80,7 +80,12 @@
                 <Button Click="ButtonVerifySNMPOIDAllRetail_Click" Content="Проверить всю розницу"/>
             </StackPanel>
         </ListBoxItem>
-
+        
+        <ListBoxItem Selected="ListBoxItem_Selected" Visibility="{Binding VisibleTest, Converter={StaticResource BoolToVisibleOrHidden}, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DSPC:MainWindow}}}">
+            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <Button Click="ButtonVerifySNMPOIDAllLeningradskaya_Click" Content="Проверить всю Ленинградскую"/>
+            </StackPanel>
+        </ListBoxItem>
 
 
     </ListBox>

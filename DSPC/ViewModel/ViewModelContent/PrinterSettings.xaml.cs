@@ -369,12 +369,52 @@ namespace DSPC.ViewModel.ViewModelContent
                                    new IPEndPoint(IPAddress.Parse($"10.{y}.{i}.250"), 161),
                                    new OctetString("public"),
                                    new List<Variable> { new Variable(new ObjectIdentifier(tbOID.Text)) },
-                                   1000);
+                                   50);
                         var ie = result[0].ToString();
                         var iee = ie.Split(':');
                         if (!allpr.Contains(iee[3]))
                         {
                             allpr.Add($"10.{y}.{i}.250 {iee[3]}");
+                        }
+                    }
+                    catch (Exception)
+                    {
+                    }
+                }
+            }
+
+
+            foreach (var item in allpr)
+            {
+                allprinters.AppendLine(item);
+            }
+
+            MyDescription = allprinters.ToString();
+
+            #endregion
+        }
+
+        private void ButtonVerifySNMPOIDAllLeningradskaya_Click(object sender, RoutedEventArgs e)
+        {
+            #region Перебор по ip адресам
+            List<string> allpr = new List<string>();
+            StringBuilder allprinters = new StringBuilder();
+            for (int y = 8; y < 12; y++)
+            {
+                for (int i = 1; i < 255; i++)
+                {
+                    try
+                    {
+                        var result = Messenger.Get(VersionCode.V1,
+                                   new IPEndPoint(IPAddress.Parse($"172.16.{y}.{i}"), 161),
+                                   new OctetString("public"),
+                                   new List<Variable> { new Variable(new ObjectIdentifier(tbOID.Text)) },
+                                   50);
+                        var ie = result[0].ToString();
+                        var iee = ie.Split(':');
+                        if (!allpr.Contains(iee[3]))
+                        {
+                            allpr.Add($"172.16.{y}.{i} {iee[3]}");
                         }
                     }
                     catch (Exception)
