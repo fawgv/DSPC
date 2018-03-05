@@ -8,29 +8,40 @@
              Name="tabProjectContent"
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-        <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <Label Content="IP:" />
-                <TextBox Name="tbIP" Width="200"/>
-            </StackPanel>
-            <Button Content="Просмотреть каталоги пользователей" 
+        <TabControl>
+            <TabItem Header="Настройка MicriSip">
+                <StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="IP:" />
+                        <TextBox Name="tbIP" Width="200"/>
+                    </StackPanel>
+                    <Button Content="Просмотреть каталоги пользователей" 
                     Click="ButtonPrintFoldersUsers_Click"/>
-            <Button Content="Выполнить проверку наличия файла"
+                    <Button Content="Выполнить проверку наличия файла"
                     Click="ButtonVerifyFileExist_Click"/>
-            <Button Content="Просмотреть содержимое файла настроек"
+                    <Button Content="Просмотреть содержимое файла настроек"
                     Click="ButtonDisplayFile_Click"/>
-            <Button Content="Создать резервную копию файла настроек"
+                    <Button Content="Создать резервную копию файла настроек"
                     Click="ButtonCreateBackUpFileSettings_Click"/>
-            <Button Content="Заменить кодеки в файле настроек"
+                    <Button Content="Заменить кодеки в файле настроек"
                     Click="ButtonReplaseCodecsInFileSettings_Click"/>
-            <Button Content="Заменить действующий файл настроек на новый"
+                    <Button Content="Заменить действующий файл настроек на новый"
                     Click="ButtonReplaceSettingsFileOnNew_Click"/>
-            <Button Content="Комплексная настройка"
+                    <Button Content="Комплексная настройка"
                     Click="ButtonComplexSetting_Click"/>
-            <Button Content="Комплексная настройка диапазона ЦВЗ"
+                    <Button Content="Комплексная настройка диапазона ЦВЗ"
                     Click="ButtonComplexSettingDiapasone_Click"/>
 
-        </StackPanel>
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="SNMP Camera">
+
+                
+                
+            </TabItem>
+        </TabControl>
+        
+        
             
     </Grid>
 </UserControl>

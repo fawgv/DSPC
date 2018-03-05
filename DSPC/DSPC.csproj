@@ -89,6 +89,9 @@
     <Compile Include="ViewModel\RibbonModel\RibbonPanel.xaml.cs">
       <DependentUpon>RibbonPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\TabModel\Project\SNMPCamera.xaml.cs">
+      <DependentUpon>SNMPCamera.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\TabModel\TabCopyContent.xaml.cs">
       <DependentUpon>TabCopyContent.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="ViewModel\RibbonModel\RibbonPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewModel\TabModel\Project\SNMPCamera.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

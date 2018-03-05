@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="DSPC.ViewModel.TabModel.Project.SNMPCamera"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.TabModel.Project"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <ListBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="OID:"/>
+                    <TextBox Text="1.3.6.1.2.1.25.3.2.1.3.1" Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+
+            <ListBoxItem >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Text="IP:"/>
+                    <TextBox Width="200"/>
+                </StackPanel>
+            </ListBoxItem>
+
+
+            <ListBoxItem >
+                <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                    <Button Click="ButtonVerifySNMPOID_Click" Content="Проверить"/>
+                    <TextBlock x:Name="tbVerSNMPOID"/>
+                </StackPanel>
+            </ListBoxItem>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
