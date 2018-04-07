@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:DSPC.ViewModel.RibbonModel"
              xmlns:Fluent="urn:fluent-ribbon"
                xmlns:Commands="clr-namespace:DSPC.Commands"
+              
              mc:Ignorable="d"
                >
     <Fluent:Ribbon.CommandBindings>
@@ -30,9 +31,6 @@
                         Executed="Console_Executed"
                         CanExecute="RibbonElement_CanExecute"/>
 
-        <CommandBinding Command="Commands:CommandsRibbon.DevPrinters"
-                        Executed="DevPrinters_Executed"
-                        CanExecute="RibbonElement_CanExecute"/>
 
 
 
@@ -123,30 +121,7 @@
                 </Fluent:Button.LargeIcon>
             </Fluent:Button>
 
-            <Fluent:Button Header="Устройства и принтеры"
-                           Command="Commands:CommandsRibbon.DevPrinters"
-                           >
-                <Fluent:Button.Icon>
-                    <Rectangle Width="20"
-                                       Height="20"
-                                       Fill="{DynamicResource BlackBrush}">
-                        <Rectangle.OpacityMask>
-                            <VisualBrush Stretch="Fill"
-                                                 Visual="{DynamicResource appbar_printer}"/>
-                        </Rectangle.OpacityMask>
-                    </Rectangle>
-                </Fluent:Button.Icon>
-                <Fluent:Button.LargeIcon>
-                    <Rectangle Width="30"
-                                       Height="30"
-                                       Fill="{DynamicResource BlackBrush}">
-                        <Rectangle.OpacityMask>
-                            <VisualBrush Stretch="Fill"
-                                                 Visual="{DynamicResource appbar_printer}"/>
-                        </Rectangle.OpacityMask>
-                    </Rectangle>
-                </Fluent:Button.LargeIcon>
-            </Fluent:Button>
+            
 
             <Fluent:Button Header="CMD.EXE"
                            Command="Commands:CommandsRibbon.Console"
@@ -279,6 +254,11 @@
             </Button>
             <PasswordBox Name="tbProject" Width="100" VerticalAlignment="Center"/>
 
+        </Fluent:RibbonGroupBox>
+    </Fluent:RibbonTabItem>
+    <Fluent:RibbonTabItem Header="Принтер">
+        <Fluent:RibbonGroupBox>
+            <local:PrinterRibbonTab/>
         </Fluent:RibbonGroupBox>
     </Fluent:RibbonTabItem>
 </Fluent:Ribbon>

@@ -24,10 +24,10 @@
 
 
             <ListBoxItem >
-                <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                <!--<StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
                     <Button Click="ButtonVerifySNMPOID_Click" Content="Проверить"/>
                     <TextBlock x:Name="tbVerSNMPOID"/>
-                </StackPanel>
+                </StackPanel>-->
             </ListBoxItem>
 
         </StackPanel>

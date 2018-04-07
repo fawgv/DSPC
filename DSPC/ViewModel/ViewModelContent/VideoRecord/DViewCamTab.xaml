@@ -1,0 +1,22 @@
+﻿<StackPanel x:Class="DSPC.ViewModel.ViewModelContent.VideoRecord.DViewCamTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent.VideoRecord"
+             mc:Ignorable="d" 
+             
+             >
+    <StackPanel.DataContext>
+        <local:DViewCamTabVM/>
+    </StackPanel.DataContext>
+
+    <StackPanel Orientation="Horizontal">
+        <Button Content="Скопировать" Command="{Binding CopyDViewCam}"/>
+        <TextBlock Text="Скопировать DViewCam на данный ПК"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+        <Button Content="Установить" Command="{Binding Install}"/>
+        <TextBlock Text="Установить DViewCam"/>
+    </StackPanel>
+</StackPanel>

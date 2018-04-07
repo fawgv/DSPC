@@ -4,52 +4,63 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:DSPC.ViewModel.ViewModelContent"
-             mc:Ignorable="d">
+             mc:Ignorable="d"
+              xmlns:videoRecord="clr-namespace:DSPC.ViewModel.ViewModelContent.VideoRecord"
+              >
     
     <TreeViewItem.Header>
         <StackPanel Orientation="Horizontal">
-            <CheckBox>iSpy (ПК2)</CheckBox>
-            <Button Click="ButtonRunSetupiSpy_Click" >скрипт</Button>
+            <CheckBox>Настройка видео-записи(ПК2)</CheckBox>
+            <!--<Button Click="ButtonRunSetupiSpy_Click" >скрипт</Button>
             <Button Click="ButtonOpenTask_Click" >
                 Планировщик
             </Button>
             <Button Click="ButtonOpenFolder_Click" >
                 Video
-            </Button>
+            </Button>-->
             
         </StackPanel>
         
     </TreeViewItem.Header>
+
+    <TabControl>
+        <TabItem Header="DViewCam">
+            <videoRecord:DViewCamTab/>
+        </TabItem>
+        <TabItem Header="iSpy">
+            <ListBox Name="curListBox">
+
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />-->
+                <CheckBox Click="CheckBoxScript_Click">
+                    <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                        <Button Click="ButtonRunSetupiSpy_Click" >
+                            Запустить скрипт
+                        </Button>
+                        <TextBlock Text="Настроить iSpy"/>
+                    </StackPanel>
+                </CheckBox>
+
+                <CheckBox Click="CheckBoxSCHTask_Click">
+                    <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                        <Button Click="ButtonOpenTask_Click" >
+                            Открыть планировщик
+                        </Button>
+                        <TextBlock Text="Запустить задачу CAM"/>
+                    </StackPanel>
+                </CheckBox>
+
+                <CheckBox Click="CheckBoxVerifyVideo_Click">
+                    <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
+                        <Button Click="ButtonOpenFolder_Click">
+                            Открыть расположение
+                        </Button>
+                        <TextBlock Text="Проверить видео"/>
+                    </StackPanel>
+                </CheckBox>
+
+            </ListBox>
+        </TabItem>
+    </TabControl>
     
-    <ListBox Name="curListBox">
-
-        <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />-->
-        <CheckBox Click="CheckBoxScript_Click">
-            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
-                <Button Click="ButtonRunSetupiSpy_Click" >
-                    Запустить скрипт
-                </Button>
-                <TextBlock Text="Настроить iSpy"/>
-            </StackPanel>
-        </CheckBox>
-
-        <CheckBox Click="CheckBoxSCHTask_Click">
-            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
-                <Button Click="ButtonOpenTask_Click" >
-                    Открыть планировщик
-                </Button>
-                <TextBlock Text="Запустить задачу CAM"/>
-            </StackPanel>
-        </CheckBox>
-
-        <CheckBox Click="CheckBoxVerifyVideo_Click">
-            <StackPanel Orientation="Horizontal" MouseLeave="StackPanel_MouseLeave">
-                <Button Click="ButtonOpenFolder_Click">
-                    Открыть расположение
-                </Button>
-                <TextBlock Text="Проверить видео"/>
-            </StackPanel>
-        </CheckBox>
-
-    </ListBox>
+    
 </TreeViewItem>

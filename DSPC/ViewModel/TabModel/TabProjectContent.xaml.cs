@@ -275,43 +275,43 @@ namespace DSPC.ViewModel.TabModel
         {
 
 
-            try
-            {
-                var result = Messenger.Get(VersionCode.V1,
-                           new IPEndPoint(IPAddress.Parse(tbIPPrinter.Text), 161),
-                           new OctetString("public"),
-                           new List<Variable> { new Variable(new ObjectIdentifier(tbOID.Text)) },
-                           2000);
-                string oidresult = string.Empty;
-                foreach (var item in result)
-                {
-                    oidresult += item.ToString();
-                }
-                MyDescription = oidresult;
+            //try
+            //{
+            //    var result = Messenger.Get(VersionCode.V1,
+            //               new IPEndPoint(IPAddress.Parse(tbIPPrinter.Text), 161),
+            //               new OctetString("public"),
+            //               new List<Variable> { new Variable(new ObjectIdentifier(tbOID.Text)) },
+            //               2000);
+            //    string oidresult = string.Empty;
+            //    foreach (var item in result)
+            //    {
+            //        oidresult += item.ToString();
+            //    }
+            //    MyDescription = oidresult;
 
-                foreach (var item in result)
-                {
-                    foreach (var printerItem in dictionaryPrinters.Keys)
-                    {
-                        if (item.Data.ToString().ToLower().Contains(printerItem))
-                        {
-                            var array = item.Data.ToString().Split(';');
-                            foreach (var it in array)
-                            {
-                                if (it.ToLower().Contains(printerItem))
-                                {
-                                    tbVerSNMPOID.Text = it;
-                                    break;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception)
-            {
+            //    foreach (var item in result)
+            //    {
+            //        foreach (var printerItem in dictionaryPrinters.Keys)
+            //        {
+            //            if (item.Data.ToString().ToLower().Contains(printerItem))
+            //            {
+            //                var array = item.Data.ToString().Split(';');
+            //                foreach (var it in array)
+            //                {
+            //                    if (it.ToLower().Contains(printerItem))
+            //                    {
+            //                        tbVerSNMPOID.Text = it;
+            //                        break;
+            //                    }
+            //                }
+            //            }
+            //        }
+            //    }
+            //}
+            //catch (Exception)
+            //{
 
-            }
+            //}
 
         }
     }

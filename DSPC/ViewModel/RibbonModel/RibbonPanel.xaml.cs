@@ -218,18 +218,6 @@ namespace DSPC.ViewModel.RibbonModel
             }
         }
 
-        private void DevPrinters_Executed(object sender, ExecutedRoutedEventArgs e)
-        {
-            try
-            {
-                ProcessStartInfo expl = new ProcessStartInfo("control.exe");
-                expl.Arguments = "printers";
-                Process.Start(expl);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
+        
     }
 }
