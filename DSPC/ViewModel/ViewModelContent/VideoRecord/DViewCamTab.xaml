@@ -12,6 +12,10 @@
     </StackPanel.DataContext>
 
     <StackPanel Orientation="Horizontal">
+        <Button Content="Открыть" Command="{Binding OpenRepos}"/>
+        <TextBlock Text="Открыть репозиторий с DViewCam Installer"/>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
         <Button Content="Скопировать" Command="{Binding CopyDViewCam}"/>
         <TextBlock Text="Скопировать DViewCam на данный ПК"/>
     </StackPanel>

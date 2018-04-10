@@ -44,7 +44,7 @@ namespace DSPC.ViewModel.ViewModelContent.VideoRecord
                           Process process = new Process();
                           ProcessStartInfo psi = new ProcessStartInfo("cmd.exe")
                           {
-                              Arguments = "/c robocopy \\\\dengisrazy.ru\\Distrib C:\\Users\\Public\\Distr *.* /z"
+                              Arguments = "/k robocopy \\\\dengisrazy.ru\\SYSVOL\\dengisrazy.ru\\Distrib\\DLink C:\\Users\\Public\\Distr\\DLink *.* /z"
                           };
                           process.StartInfo = psi;
                           process.Start();
@@ -57,6 +57,37 @@ namespace DSPC.ViewModel.ViewModelContent.VideoRecord
                   ));
             }
         }
+
+        private RelayCommand openRepos;
+        /// <summary>
+        /// Комманда 
+        /// </summary>
+        public RelayCommand OpenRepos
+        {
+            get
+            {
+                return openRepos ??
+                  (openRepos = new RelayCommand(obj =>
+                  {
+                      try
+                      {
+                          Process process = new Process();
+                          ProcessStartInfo psi = new ProcessStartInfo("cmd.exe")
+                          {
+                              Arguments = "/k explorer.exe \\\\dengisrazy.ru\\sysvol\\dengisrazy.ru\\Distrib\\DLink"
+                          };
+                          process.StartInfo = psi;
+                          process.Start();
+                      }
+                      catch (Exception)
+                      {
+                      }
+                  }//,
+                  //(e) => { return Bindings.SelectedIP != null; }
+                  ));
+            }
+        }
+
 
         private RelayCommand install;
         /// <summary>
@@ -74,7 +105,9 @@ namespace DSPC.ViewModel.ViewModelContent.VideoRecord
                           Process process = new Process();
                           ProcessStartInfo psi = new ProcessStartInfo("cmd.exe")
                           {
-                              Arguments = "/c C:\\Users\\Public\\Distr\\dlink_new.ps1}"
+
+                              Arguments = "/k powershell.exe C:\\Users\\Public\\Distr\\DLink\\dlink_new.ps1"
+                              //cmd.exe /c    powershell.exe c:\\users\\public\\distr\\dlink\\dlink_new.ps1
                           };
                           process.StartInfo = psi;
                           process.Start();
