@@ -89,7 +89,7 @@ namespace DSPC.ViewModel.TabModel
         private void CreateListPrograms()
         {
             ProgramsList = new List<ProgramsToCopyCheckListClass>();
-            ProgramsList.Add(new ProgramsToCopyCheckListClass("NAPS2", new string[] { @"AppData\Roaming\NAPS2", @"AppData\Roaming\Kyocera" }));
+            ProgramsList.Add(new ProgramsToCopyCheckListClass("NAPS2", new string[] { @"AppData\Roaming\NAPS2", @"AppData\Roaming\Kyocera", @"AppData\Local\HP" }));
             ProgramsList.Add(new ProgramsToCopyCheckListClass("Kyocera", new string[] { @"AppData\Roaming\Kyocera" }));
             ProgramsList.Add(new ProgramsToCopyCheckListClass("Mozilla Thunderbird", new string[] { @"AppData\Local\Thunderbird", @"AppData\Roaming\Thunderbird" }));
             ProgramsList.Add(new ProgramsToCopyCheckListClass("LiveWebCam", new string[] { @"AppData\Local\VirtualStore" }));
